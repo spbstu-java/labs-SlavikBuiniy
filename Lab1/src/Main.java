@@ -29,14 +29,19 @@ public class Main {
     static class Hero {
         private Strategy strategy;
 
-        public Hero() {}
 
         public void setStrategy(Strategy strategy) {
             this.strategy = strategy;
         }
 
         public int move() {
-            return strategy.move();
+            if (strategy != null){
+                return strategy.move();
+            }
+            else {
+                System.out.println("Стратегия не определена");
+                return -1;
+            }
         }
     }
 
